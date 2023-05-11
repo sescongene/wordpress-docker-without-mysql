@@ -4,7 +4,7 @@ services:
   wordpress:
     build: .
     ports:
-      - "8080:80"
+      - "${APACHE_PORT:-8001}:80"
     volumes:
       - ./wordpress:/var/www/html
       - ./php.ini:/usr/local/etc/php/php.ini
