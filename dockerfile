@@ -16,3 +16,9 @@ RUN apt-get update && apt-get install -y \
 RUN a2enmod rewrite
 
 COPY ./wordpress/ /var/www/html/
+
+RUN chown -R www-data:www-data /var/www/html
+
+RUN chmod -R 775 /var/www/html
+
+COPY httpd-limits.conf /etc/apache2/conf-available/

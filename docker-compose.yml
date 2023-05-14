@@ -5,6 +5,8 @@ services:
     build: .
     ports:
       - "${APACHE_PORT:-8001}:80"
+      - "${APACHE_PORT_SSL:-8002}:443"
     volumes:
       - ./wordpress:/var/www/html
-      - ./php.ini:/usr/local/etc/php/php.ini
+      - ./apache/php.ini:/usr/local/etc/php/php.ini
+      - ./apache/httpd-limits.conf:/etc/apache2/conf-available/httpd-limits.conf
