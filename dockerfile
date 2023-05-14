@@ -21,4 +21,4 @@ RUN chown -R www-data:www-data /var/www/html
 
 RUN chmod -R 775 /var/www/html
 
-COPY httpd-limits.conf /etc/apache2/conf-available/
+COPY ./apache/httpd-limits.conf /etc/apache2/conf-available/
